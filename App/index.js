@@ -70,16 +70,16 @@ export default class App {
   }
 
   _initAttribute() {
-    const g = new SphereGeometry(1, 40, 40);
+    const g = new BoxGeometry(1, 1, 1, 40, 40, 40); 
 
     const randomArray = [];
     const amount = g.attributes.position.count;
     console.log(g.attributes);
 
     for (let i = 0; i < amount; i++) {
-      randomArray.push(Math.random());
+      randomArray.push(Math.random() * 0.2); 
     }
-
+    
     const bufferAttribute = new BufferAttribute(
       new Float32Array(randomArray),
       1
